@@ -1,0 +1,15 @@
+.side-menu-items {
+  position: relative;
+}
+
+.item {
+  height: 20px;
+  padding-top: 10px;
+  padding-left: 40px;
+}
+
+.item:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, rgba(229,229,229,1) 97%,rgba(171,211,238,1) 100%);
+  color: black;
+}

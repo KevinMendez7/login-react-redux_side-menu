@@ -1,0 +1,18 @@
+
+.box {
+  margin: 45px;
+}
+
+.box span {
+  padding-left: 10px;
+  padding-bottom: 15px;
+}
+
+button {
+  background: #2359B6;
+  border-color: #2359B6;
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+}
