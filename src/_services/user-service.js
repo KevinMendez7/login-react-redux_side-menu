@@ -1,4 +1,3 @@
-// import config from 'config';
 import { authHeader } from '../util/auth-header';
 
 export const userService = {
@@ -12,8 +11,6 @@ export const userService = {
 };
 
 function login(username, password) {
-  console.log('login user-service')
-  console.log(username+'|'+password)
     const requestOptions = {
         method: 'POST',
         headers: {
@@ -26,11 +23,8 @@ function login(username, password) {
     return fetch("http://localhost:8080/v1/login", requestOptions)
         .then(handleResponse)
         .then(user => {
-          console.log("user_request")
-          console.log(user)
             // login successful if there's a jwt token in the response
             if (user.jwt) {
-              console.log("I'm in user token validation")
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('user', JSON.stringify(user));
             }
@@ -50,17 +44,9 @@ function getAll() {
         headers: authHeader()
     };
     return '123'
-    // return fetch(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
+    // return fetch("http://localhost:8080/v1/login", requestOptions).then(handleResponse);
 }
-//
-function getById(id) {
-    const requestOptions = {
-        method: 'GET',
-        headers: authHeader()
-    };
-    return '123'
-    // return fetch(`${config.apiUrl}/users/${id}`, requestOptions).then(handleResponse);
-}
+
 //
 function register(user) {
     const requestOptions = {
@@ -69,7 +55,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
     return '123'
-    // return fetch(`${config.apiUrl}/users/register`, requestOptions).then(handleResponse);
+    // return fetch(`http://localhost:8080/v1/register`, requestOptions).then(handleResponse);
 }
 //
 function update(user) {
@@ -79,17 +65,16 @@ function update(user) {
         body: JSON.stringify(user)
     };
     return '123'
-    // return fetch(`${config.apiUrl}/users/${user.id}`, requestOptions).then(handleResponse);;
+    // return fetch(`http://localhost:8080/v1//users/${user.id}`, requestOptions).then(handleResponse);;
 }
-//
-// // prefixed function name with underscore because delete is a reserved word in javascript
+
 function _delete(id) {
     const requestOptions = {
         method: 'DELETE',
         headers: authHeader()
     };
     return '123'
-    // return fetch(`${config.apiUrl}/users/${id}`, requestOptions).then(handleResponse);
+    // return fetch(`http://localhost:8080/v1/users/${id}`, requestOptions).then(handleResponse);
 }
 //
 function handleResponse(response) {
