@@ -7,15 +7,23 @@ import ViewLayout from '../pages/menu/component/view-layout'
 import HeaderViewLayout from '../pages/menu/component/header-view-layout'
 import SideMenuItems from '../pages/menu/component/side-menu-items'
 import HeaderViewComponents from '../pages/menu/component/header-view-components'
-import SearchView from '../pages/search/container/search-view'
+// import Search from '../pages/search/container/search'
 import DefaultRoute  from './default-route'
 
 export const PrivateRouteTest = ({ component: Component, ...rest }) => (
 
-  <Route {...rest} render={props => (    
+  <Route {...rest} render={props => (
+
       localStorage.getItem('user')
-          ? <DefaultRoute logoutClick={rest.logoutClick} >
-              <Component {...props} />
+          ? <DefaultRoute
+              logoutClick={rest.logoutClick}
+              handleSearch={rest.handleSearch}
+              homeItem={rest.homeItem}
+              >
+              <Component
+              {...props}
+              {...rest}
+              />
             </DefaultRoute>
           : <Redirect to={{ pathname: '/Login', state: { from: props.location } }} />
   )} />

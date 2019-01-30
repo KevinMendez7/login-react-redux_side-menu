@@ -12,11 +12,12 @@ class Document extends Component {
   }
 
   render(){
+    console.log(this.props)
     return(
       <DocumentLayout>
         <HeaderDocument />
         <DocumentBox>
-          <SearchBox />
+          <SearchBox handleSearch={this.props.handleSearch} />
           <UploadBox />
           <ExplorerBox />
         </DocumentBox>

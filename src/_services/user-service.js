@@ -5,7 +5,7 @@ export const userService = {
     logout,
     register,
     getAll,
-    getById,
+    // getById,
     update,
     delete: _delete
 };
@@ -86,7 +86,7 @@ function handleResponse(response) {
             if (response.status === 401) {
                 // auto logout if 401 response returned from api
                 logout();
-                location.reload(true);
+                // location.reload(true);
             }
 
             const error = (data && data.message) || response.statusText;

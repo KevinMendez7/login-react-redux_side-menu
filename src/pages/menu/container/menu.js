@@ -25,6 +25,7 @@ class Menu extends Component {
   }
 
   searchClick(){
+    console.log('to Login')
     let path = '/Login'
     // console.log(this.props.history)
     this.props.history.push(path)

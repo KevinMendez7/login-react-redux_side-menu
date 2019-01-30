@@ -3,7 +3,7 @@
 }
 
 .header-view-components div:not(.user-component) {
-  height: 35px;
+  height: 50px;
   padding: 15px 10px 0px 10px;
 }
 
@@ -23,7 +23,6 @@
 }
 
 .user-component {
-  height: 20px;
   margin-top: 10px;
   margin-right: 10px;
   padding: 5px 10px 5px 10px;

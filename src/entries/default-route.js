@@ -7,7 +7,7 @@ import ViewLayout from '../pages/menu/component/view-layout'
 import HeaderViewLayout from '../pages/menu/component/header-view-layout'
 import SideMenuItems from '../pages/menu/component/side-menu-items'
 import HeaderViewComponents from '../pages/menu/component/header-view-components'
-import SearchView from '../pages/search/container/search-view'
+// import SearchView from '../pages/search/container/search-view'
 
 const DefaultRoute = (props) => {
   console.log(props)
@@ -15,7 +15,10 @@ const DefaultRoute = (props) => {
     <MenuLayout>
       <SideMenu>
         <HeaderSideMenu />
-        <SideMenuItems>
+        <SideMenuItems
+        handleSearch={props.handleSearch}
+        homeItem={props.homeItem}
+        >
         </SideMenuItems>
       </SideMenu>
       <ViewLayout>

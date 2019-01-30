@@ -4,12 +4,12 @@ import './box.css'
 
 
 const SearchBox = (props) => {
-
+  console.log(props)
   return(
     <div className='box'>
       <h3> <Search size={30} color={'#2359B6'} /><span>Busqueda</span></h3>
       <p>Busca los documentos en el sistema</p>
-      <button>Buscar</button>
+      <button onClick={props.handleSearch}>Buscar</button>
     </div>
   )
 
